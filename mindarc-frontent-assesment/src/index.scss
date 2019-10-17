@@ -1,0 +1,123 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../node_modules/bootstrap/scss/variables';
+
+.container-fluid {
+  padding: 0px;
+}
+
+/* so all our flex item are of equal height */
+.col-sm {
+  display: flex;
+}
+
+#header {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .header__banner-message {
+    position: absolute;
+    min-width: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#main {
+  width: 100vw;
+  .card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    text-align: center;
+    -webkit-box-shadow: 4px 3px 15px -9px rgba(0, 0, 0, 0.76);
+    -moz-box-shadow: 4px 3px 15px -9px rgba(0, 0, 0, 0.76);
+    box-shadow: 4px 3px 15px -9px rgba(0, 0, 0, 0.76);
+    width: 320px;
+
+    img {
+      width: 100%;
+    }
+
+    .rounded-button {
+      border-radius: 40px;
+      border: 2px solid black;
+      width: 150px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .rounded-button:hover {
+      background-color: grey;
+      color: white;
+    }
+  }
+}
+
+/* used in exercise 1 */
+#accordion-item {
+  .accordion-item__header {
+    background-color: #ececec;
+    padding: 20px;
+  }
+
+  .accordion-item__content {
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* lets set some breakpoints
+* we are targeting the banner image
+* the content image
+* and the card class on the largest breakpoint
+*/
+@include media-breakpoint-up(xs) {
+  .header__banner-image {
+    background-image: url('http://via.placeholder.com/600X600/757474');
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 600px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .header__banner-image {
+    background-image: url('http://via.placeholder.com/600X600/757474');
+    width: 100%;
+    height: 600px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .header__banner-image {
+    background-image: url('http://via.placeholder.com/1920x650/757474');
+    width: 100%;
+    height: 650px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .header__banner-image {
+    background-image: url('http://via.placeholder.com/1920x650/757474');
+    width: 100%;
+    height: 650px;
+  }
+
+  .header__banner-message p {
+    font-size: 2rem;
+  }
+
+  #main {
+    .card {
+      width: 440px;
+      img {
+        width: 400px;
+      }
+    }
+  }
+}
