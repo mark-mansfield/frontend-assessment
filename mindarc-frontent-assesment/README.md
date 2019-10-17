@@ -24,4 +24,7 @@ I used react-bootstrap for the accordion component and the tab component for exe
 
 I used bootstrap in my html markup to use flex box and some simple styling
 
-I used some sass to utilise breakpoints on the header image size in exercise 1
+To make things easier I combined 1 and 2 into the same code base.
+There is a nav bar at the top of the page to navigate between the two examples
+
+I used some sass to utilise breakpoints exercise 1
